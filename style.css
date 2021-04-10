@@ -1,0 +1,231 @@
+/* * { box-sizing:border-box; } */
+
+/* basic stylings ------------------------------------------ */
+/* body 				 { background:url(https://scotch.io/wp-content/uploads/2014/07/61.jpg); } */
+.title{
+    text-align: left;
+    font-size:x-large;
+    background-color:  rgb(193, 199, 255);
+    padding: 0px;
+    margin-bottom: 30px;
+    color: rgb(35, 53, 214);
+    width: 100%;
+}
+.form-input{
+    display: flex;
+    /* display:inline-block; */
+    flex-direction:row;
+    /* justify-content: space-around; */
+    border-style: solid;
+    border: #5264AE;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding:0px 50px 0px 50px;
+    justify-content: space-evenly;
+    
+}
+.container 		{ 
+  height: 50%;
+  font-family:'Roboto';
+  /* width:50%;  */
+  margin: 0; 
+  display:contents; 
+  background:#FFF;
+  padding:0px 100px 0px 100px;
+  border-style: solid;
+  border-color: blue;
+  /* justify-content:center; */
+
+}
+h2 		 { 
+  text-align:center; 
+  margin-bottom:20px; 
+}
+select { 
+    font-weight:normal; 
+    color:#888; 
+    display:block; 
+  }
+
+h2 small { 
+  font-weight:normal; 
+  color:#888; 
+  display:block; 
+}
+.footer 	{ text-align:center; }
+.footer a  { color:#53B2C8; }
+
+/* form starting stylings ------------------------------- */
+.group 			  { 
+  position:relative; 
+  margin-bottom:0px; 
+  /* margin: auto; */
+    padding: 10px;
+    width:100%;
+    justify-content:space-around;
+}
+input 				{
+  font-size:18px;
+  padding:10px 0px 10px 5px;
+  display:inline;
+  width:100%;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#999; 
+  font-size:15px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-10px;
+  font-size:12px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:100%; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+.err-msg{
+    font-size: small;
+    color: red;
+    margin-left: 10px;
+    font-style: italic;
+  }
+  .err-msg1{
+    font-size:larger;
+    color: green;
+    margin-left: 10px;
+    font-style: italic;
+  }
+  .container_2 {
+    display: block;
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container_2 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container_2:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container_2 input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container_2 input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container_2 .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }

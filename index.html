@@ -1,0 +1,209 @@
+<!-- @ author : Saran B Soman -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Register Form</title>
+</head>
+<body>
+    <center>
+
+        <!-- container starts -->
+        <i class='fas fa-user-circle' style='font-size:48px;color:blue'></i>
+        <div class="container">
+            
+            <div class="title">Account Information</div>
+            
+           <!-- form tag starts -->
+            <form>
+                
+            <!--form block starts -->
+                <div class="form-input">
+                    <div class="group"><input type="checkbox" id="alert_err" value="check"> Check for alert errors</div>               
+                </div>
+                
+              <div class="form-input">
+                
+                <div class="group">      
+                    <input type="text" required id="fname">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>First Name</label>
+                    <p class="err-msg" id="err-fname"></p>
+                  </div>
+                    
+                  <div class="group">      
+                    <input type="text" required id="lname">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Last Name</label>
+                    <p class="err-msg" id="err-lname"></p>
+                  </div>
+              </div>
+            <!-- form block ends -->
+
+             <!--form block starts -->
+             <div class="form-input">
+                <div class="group">      
+                    <input type="text" required id="address">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Address</label>
+                    <p class="err-msg" id="err-address"></p>
+                  </div>
+              </div>
+            <!-- form block ends -->
+              
+            <!--form block starts -->
+            <div class="form-input">
+                <div class="group">      
+                    <input type="tel" required id="phone">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Phone Number</label>
+                    <p class="err-msg" id="err-phone"></p>
+                  </div>
+                    
+                  <div class="group">      
+                    <input type="number" required id="zip">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Zip code</label>
+                    <p class="err-msg" id="err-zip"></p>
+                  </div>
+              </div>
+            <!-- form block ends -->  
+            
+            <!--form block starts -->
+            <div class="form-input">
+                <div >      
+                    <select required id="state" class="bar">
+                        <option class="" value="Trivandrum">Trivandrum</option>
+                        <option class="" value="Kollam">Kollam</option>
+                    </select>
+                    <p class="err-msg" id="err-state"></p>
+                  </div>
+                    
+                  <div class="group">      
+                    <input type="text" required id="city">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>City</label>
+                    <p class="err-msg" id="err-city"></p>
+                  </div>
+              </div>
+            <!-- form block ends -->
+
+            <!--form block starts -->
+            <div class="form-input">
+                <div class="group">      
+                    <input type="mail" required id="mail">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Email</label>
+                    <p class="err-msg" id="err-mail"></p>
+                  </div>
+                    
+                  <div class="group">      
+                    <input type="mail" required id="cmail">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Confirm Email</label>
+                    <p class="err-msg" id="err-cmail"></p>
+                  </div>
+              </div>
+            <!-- form block ends -->
+
+                <!-- checkboxes -->
+                <div class="group">
+                    <h>Make sure to include atleast:</h3>
+                    <label class="container_2" >8 characters
+                        <input type="checkbox" id="let">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container_2" >1 Number
+                        <input type="checkbox" id="char">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container_2" >1 Letter
+                        <input type="checkbox" id="num">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <!-- checkboxes -->
+
+
+                <!-- <br><input type="checkbox" id="let" name="rad"> 8 letters
+                <br><input type="checkbox" id="char" name="rad"> 1 number
+                <br><input type="checkbox" id="num" name="rad"> 1 character -->
+
+
+                <!--form block starts -->
+            <div class="form-input">
+                <div class="group">      
+                    <input type="text" required id="pass" oninput="verify_pass()">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Password</label>
+                    <p class="err-msg" id="err-pass"></p>
+                  </div>
+                    
+                  <div class="group">      
+                    <input type="text" required id="cpass">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Confirm Password</label>
+                    <p class="err-msg" id="err-cpass"></p>
+                  </div>
+              </div>
+            <!-- form block ends -->
+
+              <!-- password validation -->
+
+                <p class="err-msg1" id="valid_pass"></p>
+                <p class="err-msg1" id="valid_captcha"></p>
+
+              <!-- password validation -->
+
+            <!-- captcha -->
+            <center>
+                <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" id="captcha"></div> <br>
+            </center>
+            <!-- captcha -->
+
+
+
+            <!-- submit button -->
+              <div >
+                  <center>
+                    <input type="button" class="btn btn-primary" value="Submit" onclick="validate()"> 
+                  </center>
+              </div>
+            <!-- submit button -->
+
+
+
+            </form>
+            <!-- form tag ends... -->   
+            
+            
+        </div>
+        <!-- container ends -->
+
+
+
+
+    
+        </center>
+    <!-- script tag -->
+    <script src="main.js"></script>
+    <script src="https://www.recaptcha.net/recaptcha/api.js" async defer></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!-- script rag ends.. -->
+</body>
+</html>
