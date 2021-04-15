@@ -42,6 +42,9 @@ function validate(){
     let cpass = document.getElementById('cpass').value;
 
     //let alert_error = document.getElementById('alert_err').value;
+    var modal = document.getElementById("myModal");
+
+    var reg_button = document.getElementById("reg_button");
 
     if(alert_err.checked==0){
         if(fname == "" || fname == null){
@@ -83,11 +86,11 @@ function validate(){
             return false;
         }
         else if(isNaN(zip)){
-            document.getElementById('err-phone').innerHTML='Enter only numbers';
+            document.getElementById('err-zip').innerHTML='Enter only numbers';
             return false;
         }
         else if(zip.length<6){
-            document.getElementById('err-phone').innerHTML='Zip code cannot be less than 6 digits';
+            document.getElementById('err-zip').innerHTML='Zip code cannot be less than 6 digits';
             return false;
         }else{
             document.getElementById('err-zip').innerHTML=' ';
@@ -246,8 +249,9 @@ function validate(){
 
     if(let.checked==1 && char.checked==1 && num.checked==1 ){
         if(grecaptcha && grecaptcha.getResponse().length > 0){
+            modal.style.display = "block";
             window.location.reload();
-            window.alert('Registration Successful!');
+            //window.alert('Registration Successful!');
             
             
         }else{
@@ -261,4 +265,7 @@ function validate(){
         document.getElementById('valid_pass').innerHTML='Password is too weak';
         }
     
+}
+if(reg_button.click()){
+    alert('button click');
 }

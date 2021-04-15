@@ -20,7 +20,7 @@
             <div class="title">Account Information</div>
             
            <!-- form tag starts -->
-            <form>
+            <form >
                 
             <!--form block starts -->
                 <div class="form-input">
@@ -62,7 +62,7 @@
             <!--form block starts -->
             <div class="form-input">
                 <div class="group">      
-                    <input type="tel" required id="phone">
+                    <input type="number" required id="phone">
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Phone Number</label>
@@ -146,7 +146,7 @@
                 <!--form block starts -->
             <div class="form-input">
                 <div class="group">      
-                    <input type="text" required id="pass" oninput="verify_pass()">
+                    <input type="password" required id="pass" oninput="verify_pass()">
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Password</label>
@@ -154,7 +154,7 @@
                   </div>
                     
                   <div class="group">      
-                    <input type="text" required id="cpass">
+                    <input type="password" required id="cpass">
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Confirm Password</label>
@@ -181,7 +181,7 @@
             <!-- submit button -->
               <div >
                   <center>
-                    <input type="button" class="btn btn-primary" value="Submit" onclick="validate()"> 
+                    <input id="reg_button" type="button" class="btn btn-primary" value="Submit" onclick="validate()"> 
                   </center>
               </div>
             <!-- submit button -->
@@ -191,6 +191,17 @@
             </form>
             <!-- form tag ends... -->   
             
+            <div id="myModal" class="modal">
+
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>Registration Successful !!</p>
+              </div>
+            
+            </div>
+            
+        </div>
             
         </div>
         <!-- container ends -->
